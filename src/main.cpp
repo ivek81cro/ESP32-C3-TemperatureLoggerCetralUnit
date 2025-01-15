@@ -1,3 +1,4 @@
+#include "credentials.h"
 #include "main.h"
 
 void setup() {

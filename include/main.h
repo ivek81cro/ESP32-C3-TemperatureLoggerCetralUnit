@@ -4,13 +4,9 @@
 #include <esp_now.h>
 #include <esp_wifi.h>
 #include <WiFi.h>
-#include <Credentials.h>
-
-// REPLACE WITH THE MAC Address of your receiver 
-extern uint8_t broadcastAddress[];
 
 // Variable to store if sending data was successful
-extern String success;
+String success;
 
 // Structure example to send data
 // Must match the receiver structure
@@ -20,9 +16,9 @@ typedef struct EspNowMessage {
 } EspNowMessage;
 
 // Create a struct_message to hold incoming sensor readings
-extern EspNowMessage incomingReadings;
+EspNowMessage incomingReadings;
 
-extern esp_now_peer_info_t peerInfo;
+esp_now_peer_info_t peerInfo;
 
 // Callback when data is sent
 void onDataSent(const uint8_t *mac_addr, esp_now_send_status_t status);
